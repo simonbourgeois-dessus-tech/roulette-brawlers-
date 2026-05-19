@@ -1,0 +1,247 @@
+body {
+    background-color: #11111a;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+h1 {
+    color: #fbc531;
+    text-shadow: 3px 3px #c23616;
+    margin-bottom: 35px;
+    font-size: 2.5rem;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wheel-area {
+    flex: 1;
+    min-width: 320px;
+}
+
+.wheel-box {
+    position: relative;
+    display: inline-block;
+}
+
+.arrow {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 28px solid #fbc531;
+    z-index: 10;
+    filter: drop-shadow(0px 4px 5px rgba(0,0,0,0.5));
+}
+
+canvas {
+    border-radius: 50%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    background-color: #161625;
+}
+
+button {
+    background-color: #4cd137;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 5px #44bd32;
+    transition: 0.1s;
+    margin-top: 15px;
+}
+
+button:active {
+    box-shadow: 0 0 #44bd32;
+    transform: translateY(5px);
+}
+
+/* Zone du gagnant et bouton de retrait */
+#winner-box {
+    margin-top: 25px;
+    min-height: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#winner-display {
+    margin: 0;
+    color: #00a8ff;
+    text-shadow: 1px 1px #000;
+}
+
+.remove-winner-btn {
+    background-color: #e67e22;
+    box-shadow: 0 4px #d35400;
+    font-size: 14px;
+    padding: 8px 15px;
+    margin-top: 0;
+}
+
+.remove-winner-btn:active {
+    box-shadow: 0 0 #d35400;
+}
+
+/* PANNEAU DE CONFIGURATION */
+.manager-panel {
+    background: #161625;
+    border: 2px solid #27273a;
+    border-radius: 12px;
+    padding: 20px;
+    width: 365px;
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.manager-panel h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fbc531;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.manager-panel h3:first-child { margin-top: 0; }
+
+.input-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#brawler-select {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #3d3d5c;
+    background: #0f0f1a;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#brawler-select optgroup {
+    background: #161625;
+    font-weight: bold;
+}
+
+#add-btn {
+    padding: 5px 20px;
+    font-size: 14px;
+    margin-top: 0;
+    box-shadow: 0 3px #44bd32;
+}
+
+.global-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.secondary-btn {
+    background-color: #34495e;
+    box-shadow: 0 4px #2c3e50;
+    font-size: 13px;
+    padding: 10px;
+    margin-top: 0;
+    flex: 1;
+}
+.secondary-btn:active { box-shadow: 0 0 #2c3e50; }
+
+.shuffle-btn {
+    background-color: #9b59b6;
+    box-shadow: 0 4px #8e44ad;
+    font-size: 13px;
+    padding: 10px;
+    margin-top: 0;
+    flex: 1;
+}
+.shuffle-btn:active { box-shadow: 0 0 #8e44ad; }
+
+.danger-btn {
+    background-color: #c0392b;
+    box-shadow: 0 4px #962d22;
+    font-size: 13px;
+    padding: 10px;
+    margin-top: 0;
+    flex: 1;
+}
+.danger-btn:active { box-shadow: 0 0 #962d22; }
+
+/* COULEURS DES RARETÉS */
+.rare-ultra-legendary, .tag-ultra-legendary { color: #ff6b00; }
+.rare-legendary, .tag-legendary { color: #f1c40f; }
+.rare-mythique, .tag-mythique { color: #ff4757; }
+.rare-epique, .tag-epique { color: #a55eea; }
+.rare-super-rare, .tag-super-rare { color: #54a0ff; }
+.rare-rare, .tag-rare { color: #2ed573; }
+.rare-starting-brawler, .tag-starting-brawler { color: #00d2d3; }
+
+#brawler-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #27273a;
+    border-radius: 6px;
+    background: #0f0f1a;
+    padding: 5px;
+}
+
+#brawler-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f1f32;
+    padding: 8px 12px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border-left: 5px solid #fff;
+}
+
+.brawler-name {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.delete-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0;
+    box-shadow: none;
+}
+.delete-btn:hover { background: #ff6b81; }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roulette Brawl Stars Personnalisée</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Roulette Personnalisée Brawl Stars</h1>
+        
+        <div class="main-content">
+            <div class="wheel-area">
+                <div class="wheel-box">
+                    <div class="arrow"></div>
+                    <canvas id="wheel" width="450" height="450"></canvas>
+                </div>
+                <br>
+                <button id="spin-btn">Lancer la roue !</button>
+                
+                <div id="winner-box">
+                    <h2 id="winner-display">Bonne chance !</h2>
+                </div>
+            </div>
+
+            <div class="manager-panel">
+                <h3>Ajouter un Brawler</h3>
+                
+                <div class="input-box">
+                    <select id="brawler-select"></select>
+                    <button id="add-btn">Ajouter</button>
+                </div>
+
+                <div class="global-actions">
+                    <button id="add-all-btn" class="secondary-btn">Tout ajouter</button>
+                    <button id="shuffle-btn" class="shuffle-btn">🎲 Mélanger</button>
+                    <button id="clear-btn" class="danger-btn">Tout vider</button>
+                </div>
+
+                <h3>Sur la roue actuellement :</h3>
+                <ul id="brawler-list">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
